@@ -7,6 +7,14 @@ pipeline{
     }
     
     stages{
+        stage("Terrfaorm Init"){
+            steps{
+               dir('Terraform'){
+                sh 'terraform init -reconfigure'
+               }
+            }
+        }
+
         stage("Terrfaorm Plan"){
             steps{
                dir('Terraform'){
