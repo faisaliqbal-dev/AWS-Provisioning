@@ -18,9 +18,8 @@ pipeline{
         stage("Terrfaorm Plan"){
             steps{
                dir('Terraform'){
-                input message : 'Approval for terraform apply'
                 sh 'terraform plan -out=tfplan'
-                 
+                input message : 'Approval for terraform apply'                 
                }
             }
         }
