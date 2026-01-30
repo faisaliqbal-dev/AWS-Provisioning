@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    environment {
+      AWS_ACCESS_KEY_ID = credentials('AWS-Cred')
+      AWS_SECRET_KEY_ID = credentials('AWS-Cred')
+    }
+
+    stages {
+        stage('Initializing Provider') {
+            steps {
+                dir ('Terrform'){
+                    sh 'terraform init'
+
+                }
+            }
+        }
+         stage('Format Check') {
+            steps {
+                dir ('Terraform'){
+                    sh 'terraform fmt'
+
+                }
+            }
+        }
+        stage('Code Validate') {
+            steps {
+                dir ('Terraform'){
+                    sh 'terraform validate'
+
+                }
+            }
+        }
+    }
+}

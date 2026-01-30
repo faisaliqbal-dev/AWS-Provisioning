@@ -1,0 +1,31 @@
+pipeline{
+    agent any
+    environment {
+        AWS_ACCESS_KEY_ID = credentials('AWS-Cred')
+        AWS_SECRET_KEY_ID = credentials('AWS-Cred')
+    }
+    stages{
+        stage("Terrfaorm Plan"){
+            steps{
+               dir('Terraform'){
+                sh 'terraform plan -out=tfplan'
+               }
+            }
+        }
+        
+        stage("Approval"){
+            steps{
+               
+               input message : 'Approval for terraform apply'
+            }
+        }
+
+        stage("Terrfaorm Apply"){
+            steps{
+               dir('Terraform'){
+                sh 'terraform apply tfplan'
+               }
+            }
+        }
+    }
+}
