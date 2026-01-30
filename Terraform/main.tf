@@ -17,7 +17,7 @@ resource "aws_instance" "Application-Instance" {
   EOF
 
   tags = {
-    name = "Application-Server"
+    Name = "Application-Server"
   }
   
 }
