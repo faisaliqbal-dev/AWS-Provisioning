@@ -3,7 +3,7 @@ resource "aws_instance" "Application-Instance" {
     instance_type = "t3.micro"
     key_name = aws_key_pair.Application-Key-pair.key_name
     vpc_security_group_ids = [aws_security_group.Application_Sec_Grp.id]
-    subnet_id = data.aws_vpc.default.id
+    subnet_id = data.subnet_id.default.id
     count = 1
 
     user_data = <<-EOF
