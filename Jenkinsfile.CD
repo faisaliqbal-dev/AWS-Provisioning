@@ -1,9 +1,12 @@
 pipeline{
+
     agent any
+
     environment {
         AWS_ACCESS_KEY_ID = credentials('AWS-Cred')
         AWS_SECRET_KEY_ID = credentials('AWS-Cred')
     }
+    
     stages{
         stage("Terrfaorm Plan"){
             steps{
