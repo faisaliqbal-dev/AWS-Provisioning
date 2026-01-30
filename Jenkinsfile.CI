@@ -15,6 +15,7 @@ pipeline {
                 }
             }
         }
+
          stage('Format Check') {
             steps {
                 dir ('Terraform'){
@@ -23,6 +24,7 @@ pipeline {
                 }
             }
         }
+        
         stage('Code Validate') {
             steps {
                 dir ('Terraform'){
