@@ -11,7 +11,7 @@ pipeline {
             steps {
                 withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'AWS-Cred', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
 
-                dir ('Terrform'){
+                dir ('Terraform'){
                     sh 'terraform init'
 
                 }
