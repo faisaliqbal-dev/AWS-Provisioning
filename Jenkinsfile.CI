@@ -16,7 +16,7 @@ pipeline {
             }
         }
 
-         stage('Code Format Check') {
+         stage('Code Format Checks') {
             steps {
                 dir ('Terraform'){
                     sh 'terraform fmt'
