@@ -18,6 +18,7 @@ pipeline {
             }
           }
         }
+
          stage('Code Format Checks') {
             steps {
                 dir ('Terraform'){
