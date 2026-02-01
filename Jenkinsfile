@@ -4,5 +4,4 @@ node {
     } else {
         load 'Jenkinsfile.CI'
     }
-
 }
