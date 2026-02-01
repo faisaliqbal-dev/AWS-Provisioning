@@ -1,7 +1,7 @@
 node {
     if (env.BRANCH_NAME == 'main') {
-        load 'Jenkinsfile.cd'
+        load 'Jenkinsfile.CD'
     } else {
-        load 'Jenkinsfile.ci'
+        load 'Jenkinsfile.CI'
     }
 }
